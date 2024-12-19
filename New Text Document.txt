@@ -1,0 +1,26 @@
+
+                                                         AGE CALCULATOR APP
+
+
+
+import 'packagefluttermaterial.dart';
+
+void main() = runApp(MaterialApp(home AgeCalculator()));
+
+class AgeCalculator extends StatelessWidget {
+  final yearController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body Column(children [
+        TextField( controller yearController,decoration InputDecoration(hintText 'Birth year')),
+        ElevatedButton(onPressed () {
+              final age = DateTime.now().year - int.parse(yearController.text);
+              showDialog(context context, builder (_) = AlertDialog(content Text('Age $age')));
+            },
+            child Text('Calculate'))
+      ]),
+    );
+  }
+}
